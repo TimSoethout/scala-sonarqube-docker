@@ -1,12 +1,16 @@
 Docker-compose config to start up database and sonar and link them. Data is stored in a data container.
 
-Build separately due to bug in docker-compose (https://github.com/docker/compose/issues/1065):
-$ docker-compose build sonar
 
 Run with:
-$ docker-compose up -d
-or (daemon)
-$ docker-compose start
+$ docker-compose start data db sonarqube
+
+Run `plugins` to install plugins:
+$ docker-compose start plugins
+
+Restart `sonar` to have it pick up the plugins
+$ docker-compose restart sonar
+
+SonarQube should now be available at port :9000 on your Docker host.
 
 Run this to inspect the data volumes
 $ docker run --rm -v /usr/local/bin/docker:/docker -v /var/run/docker.sock:/docker.sock svendowideit/samba sonardocker_data_1
