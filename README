@@ -1,0 +1,31 @@
+Docker-compose config to start up database and sonar and link them. Data is stored in a data container.
+
+Build separately due to bug in docker-compose (https://github.com/docker/compose/issues/1065):
+$ docker-compose build sonar
+
+Run with:
+$ docker-compose up -d
+or (daemon)
+$ docker-compose start
+
+Run this to inspect the data volumes
+$ docker run --rm -v /usr/local/bin/docker:/docker -v /var/run/docker.sock:/docker.sock svendowideit/samba sonardocker_data_1
+
+
+Extra
+=====
+
+`java-sonar-way-merged.xml` contains the strict ruleset used in our Sonar. It can be imported via de web gui.
+
+Sonar Plugin locations
+----------------------
+
+- https://github.com/SonarCommunity/sonar-scala
+- https://github.com/RadoBuransky/sonar-scoverage-plugin/releases
+- https://github.com/emrehan/sonar-scalastyle
+
+Update Plugins
+==============
+
+See `sonar-plugins/assets/init.sh` for plugins and versions.
+Please update the plugins there for reproducability and restart the containers with `docker-compose up -d`
