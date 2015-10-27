@@ -2,6 +2,8 @@
 set -e
 set -x
 
+mkdir -p ${SONAR_PLUGINS_DOWNLOADS_DIR}
+
 # Install the latest version of the plugins
 ls -al ${SONAR_PLUGINS_DOWNLOADS_DIR}
 
