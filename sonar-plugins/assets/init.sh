@@ -19,6 +19,7 @@ wget -N https://github.com/racodond/sonar-jproperties-plugin/releases/download/1
 wget -N https://sonarsource.bintray.com/Distribution/sonar-javascript-plugin/sonar-javascript-plugin-2.8.jar | true
 wget -N http://downloads.sonarsource.com/plugins/org/codehaus/sonar-plugins/java/sonar-checkstyle-plugin/2.3/sonar-checkstyle-plugin-2.3.jar | true
 wget -N https://sonarsource.bintray.com/Distribution/sonar-findbugs-plugin/sonar-findbugs-plugin-3.3.jar | true
+wget -N http://downloads.sonarsource.com/plugins/org/codehaus/sonar-plugins/sonar-cobertura-plugin/1.6.3/sonar-cobertura-plugin-1.6.3.jar | true
 
 # 3rd party plugins
 echo "Sonar scala plugin from https://github.com/SonarCommunity/sonar-scala/pull/11 (the pull request is not merged yet at time of committing, but needed for Sonar 5) - fetched from my repository at the moment"
